@@ -16,7 +16,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-purple-600 blur-[120px] opacity-40 rounded-full"></div>
 
         <Image
-          src="/profile.jpeg"
+          src="/profile.png"
           alt="Chethan C Malli"
           width={220}
           height={220}
