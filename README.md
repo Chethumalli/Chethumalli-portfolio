@@ -216,15 +216,7 @@ Live website
 ```
 https://chethumalli-portfolio-mrw9.vercel.app
 ```
-
 ---
-
-# 📸 Screenshots
-
-You can add screenshots here later.
-
-Example:
-
 ```
 /public/portfolio-preview.png
 ```
