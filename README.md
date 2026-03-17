@@ -147,7 +147,7 @@ https://github.com/Chethumalli/face-recognition-attendance-system
 
 ---
 
-## 🧑‍💼 Client.X Platform
+## 🧑‍💼 clientX.tech
 
 Client service automation and project management platform.
 
