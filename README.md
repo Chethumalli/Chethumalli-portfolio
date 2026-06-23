@@ -38,7 +38,6 @@ This portfolio showcases my **AI projects, web applications, GitHub activity, an
 - Particle Background
 
 ## Tools
-- Git
 - GitHub
 - Vercel Deployment
 
