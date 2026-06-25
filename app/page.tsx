@@ -7,7 +7,8 @@ import Contact from "../src/components/Contact"
 import CursorGlow from "../src/components/CursorGlow"
 import CursorTrail from "../src/components/CursorTrail"
 import Certifications from "../src/components/Certifications"
-
+import Experience from "../src/components/Experience"
+import Education from "../src/components/Education"
 export default function Home() {
   return (
     <main className="bg-black text-white min-h-screen">
@@ -28,8 +29,11 @@ export default function Home() {
       <section id="skills">
         <Skills />
       </section>
-      <section id="skills">
-  <Skills />
+      <section id="experience">
+  <Experience />
+</section>
+<section id="education">
+  <Education />
 </section>
 
 <section id="certifications">

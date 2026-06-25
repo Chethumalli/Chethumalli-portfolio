@@ -22,6 +22,13 @@ export default function Navbar() {
           <a href="#skills" className="hover:text-purple-500 transition">
             Skills
           </a>
+          <a href="#experience" className="hover:text-purple-500 transition">
+            Experience
+          </a>
+
+          <a href="#education" className="hover:text-purple-500 transition">
+            Education
+          </a>
 
           <a href="#certifications" className="hover:text-purple-500 transition">
             Certifications
@@ -58,6 +65,14 @@ export default function Navbar() {
 
           <a href="#skills" onClick={() => setMenuOpen(false)}>
             Skills
+          </a>
+
+          <a href="#experience" className="hover:text-purple-500 transition">
+            Experience
+          </a>
+
+          <a href="#education" className="hover:text-purple-500 transition">
+            Education
           </a>
 
           <a href="#certifications" onClick={() => setMenuOpen(false)}>
