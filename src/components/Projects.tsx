@@ -107,7 +107,7 @@ export default function Projects() {
         "Modern personal portfolio built with Next.js featuring animations, GitHub activity, responsive design, and contact integration.",
       tech: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
       github:
-        "https://github.com/Chethumalli/chethan-portfolio",
+        "https://github.com/Chethumalli/Chethumalli-portfolio",
     },
 
     {
