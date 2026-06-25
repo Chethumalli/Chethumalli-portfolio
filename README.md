@@ -389,12 +389,6 @@ Feel free to fork the repository and submit a pull request.
 
 ---
 
-# 📄 License
-
-This project is licensed under the MIT License.
-
----
-
 # 🙌 Acknowledgements
 
 Special thanks to the amazing open-source community and the developers behind
