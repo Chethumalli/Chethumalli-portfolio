@@ -5,19 +5,33 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa"
 
 export default function Contact() {
 
-  const sendEmail = (e:any) => {
-    e.preventDefault()
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
 
-    emailjs.sendForm(
-      "service_id",
-      "template_id",
-      e.target,
-      "public_key"
-    )
+  const form = e.currentTarget;
 
-    alert("Message sent!")
-    e.target.reset()
+  const formData = {
+    name: (form.elements.namedItem("name") as HTMLInputElement).value,
+    email: (form.elements.namedItem("email") as HTMLInputElement).value,
+    message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+  };
+
+  const res = await fetch("/api/contact", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formData),
+  });
+
+  if (res.ok) {
+    alert("Message sent successfully!");
+    form.reset();
+  } else {
+    alert("Something went wrong.");
   }
+};
+
 
   return (
     <section id="contact" className="py-20 text-white text-center px-6">
@@ -61,41 +75,40 @@ export default function Contact() {
 
       {/* Contact Form */}
 
-      <form
-        onSubmit={sendEmail}
-        className="max-w-md mx-auto flex flex-col gap-4"
-      >
+      <form onSubmit={sendEmail} className="max-w-md mx-auto flex flex-col gap-4">
 
-        <input
-          name="name"
-          placeholder="Name"
-          required
-          className="p-3 bg-zinc-900 rounded border border-gray-700 focus:border-purple-500 outline-none"
-        />
+  <input
+    type="text"
+    name="name"
+    placeholder="Your Name"
+    required
+    className="p-3 bg-zinc-900 rounded-lg"
+  />
 
-        <input
-          name="email"
-          placeholder="Email"
-          required
-          className="p-3 bg-zinc-900 rounded border border-gray-700 focus:border-purple-500 outline-none"
-        />
+  <input
+    type="email"
+    name="email"
+    placeholder="Your Email"
+    required
+    className="p-3 bg-zinc-900 rounded-lg"
+  />
 
-        <textarea
-          name="message"
-          placeholder="Message"
-          rows={4}
-          required
-          className="p-3 bg-zinc-900 rounded border border-gray-700 focus:border-purple-500 outline-none"
-        />
+  <textarea
+    name="message"
+    placeholder="Your Message"
+    rows={5}
+    required
+    className="p-3 bg-zinc-900 rounded-lg"
+  />
 
-        <button
-          type="submit"
-          className="bg-purple-600 py-3 rounded hover:bg-purple-700 transition"
-        >
-          Send Message
-        </button>
+  <button
+    type="submit"
+    className="bg-purple-600 py-3 rounded-lg hover:bg-purple-700 transition"
+  >
+    Send Message
+  </button>
 
-      </form>
+</form>
 
     </section>
   )
