@@ -6,7 +6,7 @@ import GithubStats from "../src/components/GithubStats"
 import Contact from "../src/components/Contact"
 import CursorGlow from "../src/components/CursorGlow"
 import CursorTrail from "../src/components/CursorTrail"
-
+import Certifications from "../src/components/Certifications"
 
 export default function Home() {
   return (
@@ -28,6 +28,17 @@ export default function Home() {
       <section id="skills">
         <Skills />
       </section>
+      <section id="skills">
+  <Skills />
+</section>
+
+<section id="certifications">
+  <Certifications />
+</section>
+
+<section id="projects">
+  <Projects />
+</section>
 
       {/* Projects Section */}
       <section id="projects">

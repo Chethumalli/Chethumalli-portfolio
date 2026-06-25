@@ -58,23 +58,31 @@ I enjoy blending Artificial Intelligence, Machine Learning, and Web Development 
       </p>
 
       {/* Buttons */}
-      <div className="mt-8 flex gap-4">
+      <div className="mt-8 flex flex-wrap justify-center gap-4">
 
-        <a
-          href="#projects"
-          className="bg-purple-600 px-6 py-3 rounded-lg hover:bg-purple-700 transition"
-        >
-          View Projects
-        </a>
+  <a
+    href="#projects"
+    className="bg-purple-600 px-6 py-3 rounded-lg hover:bg-purple-700 transition"
+  >
+    View Projects
+  </a>
 
-        <a
-          href="#contact"
-          className="border border-gray-600 px-6 py-3 rounded-lg hover:border-purple-500 transition"
-        >
-          Contact Me
-        </a>
+  <a
+    href="#contact"
+    className="border border-gray-600 px-6 py-3 rounded-lg hover:border-purple-500 transition"
+  >
+    Contact Me
+  </a>
 
-      </div>
+  <a
+    href="/resume.pdf"
+    download
+    className="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition"
+  >
+    Download Resume
+  </a>
+
+</div>
 
     </section>
   )
