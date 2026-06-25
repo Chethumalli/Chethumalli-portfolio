@@ -9,6 +9,7 @@ import CursorTrail from "../src/components/CursorTrail"
 import Certifications from "../src/components/Certifications"
 import Experience from "../src/components/Experience"
 import Education from "../src/components/Education"
+import Achievements from "../src/components/Achievements"
 export default function Home() {
   return (
     <main className="bg-black text-white min-h-screen">
@@ -39,6 +40,11 @@ export default function Home() {
 <section id="certifications">
   <Certifications />
 </section>
+
+<section id="achievements">
+  <Achievements />
+</section>
+
       {/* Projects Section */}
       <section id="projects">
         <Projects />
