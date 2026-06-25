@@ -45,7 +45,7 @@ export default function Hero() {
 
           {/* Name */}
 
-          <h1 className="text-6xl md:text-7xl font-extrabold leading-tight">
+          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
 
             <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent">
               Chethan C Malli
@@ -172,8 +172,8 @@ export default function Hero() {
             <Image
               src="/profile.png"
               alt="Chethan C Malli"
-              width={350}
-              height={350}
+              width={450}
+              height={450}
               priority
               className="relative rounded-full border-4 border-purple-500 object-cover shadow-[0_0_60px_rgba(168,85,247,0.5)]"
             />

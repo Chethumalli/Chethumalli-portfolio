@@ -10,6 +10,10 @@ import Certifications from "../src/components/Certifications"
 import Experience from "../src/components/Experience"
 import Education from "../src/components/Education"
 import Achievements from "../src/components/Achievements"
+import AnimatedBackground from "../src/components/AnimatedBackground"
+import Footer from "../src/components/Footer"
+import LoadingScreen from "../src/components/LoadingScreen"
+import ScrollProgress from "../src/components/ScrollProgress"
 export default function Home() {
   return (
     <main className="bg-black text-white min-h-screen">
@@ -17,48 +21,33 @@ export default function Home() {
 {/* <CursorTrail /> */}
       <CursorGlow />
       <CursorTrail />
+      <LoadingScreen />
 
+      <ScrollProgress />
+
+      <AnimatedBackground />
       {/* Navbar */}
       <Navbar />
 
-      {/* Hero Section */}
-      <section id="home">
-        <Hero />
-      </section>
+<Hero />
 
-      {/* Skills Section */}
-      <section id="skills">
-        <Skills />
-      </section>
-      <section id="experience">
-  <Experience />
-</section>
-<section id="education">
-  <Education />
-</section>
+<Skills />
 
-<section id="certifications">
-  <Certifications />
-</section>
+<Experience />
 
-<section id="achievements">
-  <Achievements />
-</section>
+<Education />
 
-      {/* Projects Section */}
-      <section id="projects">
-        <Projects />
-      </section>
+<Certifications />
 
-      {/* GitHub Stats */}
-      <section id="github">
-        <GithubStats />
-      </section>
+<Achievements />
 
-      {/* Contact Section */}
-      <section id="contact">
-        <Contact />
-      </section>
+<Projects />
+
+<GithubStats />
+
+<Contact />
+
+<Footer />
 
     </main>
   )
