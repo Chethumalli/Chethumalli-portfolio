@@ -35,11 +35,6 @@ export default function Home() {
 <section id="certifications">
   <Certifications />
 </section>
-
-<section id="projects">
-  <Projects />
-</section>
-
       {/* Projects Section */}
       <section id="projects">
         <Projects />
