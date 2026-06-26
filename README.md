@@ -1,70 +1,282 @@
-# 🌐 Chethan Malli — Portfolio
+# 🚀 Chethan C Malli Portfolio
 
-A modern **AI Developer Portfolio Website** built using **Next.js, React, Tailwind CSS, and Framer Motion**.
+A modern, premium, fully responsive, and interactive developer portfolio built with **Next.js 16**, **React 19**, **TypeScript**, **Tailwind CSS 4**, and **Framer Motion**. This portfolio showcases my projects, technical skills, experience, education, certifications, achievements, GitHub activity, and provides a fully functional contact system powered by **Resend API**.
 
-This portfolio showcases my **AI projects, web applications, GitHub activity, and technical skills** in an interactive and animated interface.
+## 🌐 Live Demo
 
-🔗 **Live Website:**  
-[https://chethumalli-portfolio.vercel.app/](https://chethumalli-portfolio.vercel.app/)
-
----
-
-## 🚀 Features
-
-✨ Modern Developer Portfolio  
-✨ Animated Hero Section  
-✨ Interactive Skills Showcase  
-✨ Project Cards with Tech Stack Badges  
-✨ GitHub Contribution Heatmap  
-✨ Smooth Scrolling Navigation  
-✨ Responsive Design  
-✨ Custom Cursor Animation  
-✨ Particle Background Animation  
-✨ Contact Section
+🔗 https://chethumalli-portfolio.vercel.app
 
 ---
 
-## 🧠 Tech Stack
+# ✨ Features
+
+### 🎨 Modern UI/UX
+- Premium dark theme
+- Glassmorphism navigation bar
+- Fully responsive layout
+- Smooth scrolling navigation
+- Professional typography
+- Purple gradient branding
+- Beautiful hover animations
+- Mobile-friendly design
+
+---
+
+## 🏠 Hero Section
+
+- Animated introduction
+- Dynamic typing animation
+- Professional profile image
+- Social media links
+- Resume download button
+- Call-to-action buttons
+- Smooth entrance animations
+
+---
+
+## 💻 Skills Section
+
+Categorized technical skills including
+
+- Frontend Development
+- Backend Development
+- Programming Languages
+- AI / Machine Learning
+- Databases
+- Cloud & Deployment
+- Developer Tools
+
+---
+
+## 💼 Experience
+
+Professional experience including
+
+- AI/ML Projects
+- Freelance Web Development
+- Full Stack Development
+- Student Technical Activities
+
+---
+
+## 🎓 Education Timeline
+
+Interactive education timeline showing
+
+- Degree
+- Institution
+- Academic Year
+- CGPA / Performance
+- Specialization
+
+---
+
+## 📜 Certifications
+
+Professional certifications from
+
+- NPTEL
+- IBM SkillsBuild
+- Infosys Springboard
+- Udemy
+- Other technical platforms
+
+---
+
+## 🏆 Achievements
+
+Animated achievement counters including
+
+- Projects Completed
+- Certifications
+- GitHub Repositories
+- Technologies Learned
+- Client Projects
+- Hackathons & Workshops
+
+---
+
+## 🚀 Projects Showcase
+
+Interactive project section featuring
+
+- AI Projects
+- Web Development
+- Full Stack Applications
+- Python Projects
+- Live Website Links
+- GitHub Repository Links
+- Technology Stack Badges
+- Animated Cards
+- Hover Effects
+
+Projects Included
+
+- AI Stock Analyst
+- Face Recognition Attendance System
+- Bulk Mail Send API
+- AI Speech-to-Text Converter
+- GenAI Workshop
+- Restaurant Website
+- Auction Platform
+- Student Grade Management System
+- Client.X Platform
+- Master Cut Professional Saloon
+- Artifex AI Club Website
+- Developer Portfolio
+- Multilingual Speech Translator
+
+---
+
+## 🔥 Project Filtering
+
+Animated category filters
+
+- All
+- AI
+- Web
+- Full Stack
+- Python
+
+Powered by Framer Motion animations.
+
+---
+
+## 📊 GitHub Section
+
+Displays
+
+- GitHub Contribution Calendar
+- Contribution Heatmap
+- GitHub Activity
+
+---
+
+## 📬 Contact Form
+
+Secure contact form powered by
+
+- Resend API
+- Next.js API Routes
+
+Features
+
+- Name
+- Email
+- Message
+- Email Notifications
+- Error Handling
+- Success Alerts
+
+---
+
+## 🎭 Animations
+
+Powered by Framer Motion
+
+Includes
+
+- Fade Animations
+- Scale Animations
+- Hover Effects
+- Card Animations
+- Smooth Page Transitions
+- Interactive Components
+
+---
+
+## 🎯 Interactive Features
+
+- Cursor Glow Effect
+- Cursor Trail Animation
+- Animated Background
+- Loading Screen
+- Scroll Progress Bar
+- Responsive Navigation
+- Smooth Section Navigation
+
+---
+
+## 📱 Responsive Design
+
+Optimized for
+
+- Desktop
+- Laptop
+- Tablet
+- Mobile Devices
+
+---
+
+# 🛠 Tech Stack
 
 ## Frontend
-- Next.js
-- React
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- Framer Motion
+
+## Backend
+
+- Next.js API Routes
+- Resend API
+
+## Styling
+
 - Tailwind CSS
-- Framer Motion
+- CSS Animations
 
-## Animations
-- Framer Motion
-- Custom Cursor Animation
-- Particle Background
+## Icons
 
-## Tools
+- Lucide React
+
+## Deployment
+
+- Vercel
+
+## Version Control
+
+- Git
 - GitHub
-- Vercel Deployment
 
 ---
 
-## 📂 Project Structure
+# 📂 Folder Structure
 
 ```
-chethan-portfolio
-│
+.
 ├── app
-│   ├── page.tsx
+│   ├── api
+│   │   └── contact
+│   ├── globals.css
 │   ├── layout.tsx
+│   └── page.tsx
+│
+├── public
+│   ├── profile.png
+│   ├── resume.pdf
+│   └── favicon.ico
 │
 ├── src
 │   └── components
 │       ├── Navbar.tsx
 │       ├── Hero.tsx
 │       ├── Skills.tsx
+│       ├── Experience.tsx
+│       ├── Education.tsx
+│       ├── Certifications.tsx
+│       ├── Achievements.tsx
 │       ├── Projects.tsx
 │       ├── GithubStats.tsx
 │       ├── Contact.tsx
+│       ├── Footer.tsx
+│       ├── LoadingScreen.tsx
+│       ├── AnimatedBackground.tsx
 │       ├── CursorGlow.tsx
-│       └── ParticlesBg.tsx
-│
-├── public
-│   └── profile.png
+│       ├── CursorTrail.tsx
+│       └── ScrollProgress.tsx
 │
 ├── package.json
 └── README.md
@@ -72,110 +284,18 @@ chethan-portfolio
 
 ---
 
-## 🧩 Featured Projects
-
-## 📈 AI Stock Analyst
-
-Machine learning model predicting stock trends using historical market data.
-
-### Tech Stack
-
-```
-Python
-Scikit-learn
-Pandas
-Machine Learning
-```
-
-GitHub  
-https://github.com/Chethumalli/Stock-price-predictor-AI
-
----
-
-## 📧 Bulk Mail Send API
-
-CSV based personalized bulk email sending API built with Next.js and Nodemailer.
-
-### Tech Stack
-
-```
-Next.js
-Node.js
-Nodemailer
-TypeScript
-```
-
-GitHub  
-https://github.com/Chethumalli/Bulk-mail-send-api
-
----
-
-## 🌍 Multilingual Speech Translator
-
-Speech recognition system converting multiple languages into English text.
-
-### Tech Stack
-
-```
-Python
-Flask
-SpeechRecognition
-Deep Translator
-```
-
-GitHub  
-https://github.com/Chethumalli/Language-converter-AI
-
----
-
-## 👤 AI Face Recognition System
-
-Real-time face recognition system using computer vision and machine learning.
-
-### Tech Stack
-
-```
-Python
-OpenCV
-Face Recognition
-Computer Vision
-```
-
-GitHub  
-https://github.com/Chethumalli/face-recognition-attendance-system
-
----
-
-## 🧑‍💼 clientX.tech
-
-Client service automation and project management platform.
-
-Website  
-https://www.clientx.tech/
-
-### Tech Stack
-
-```
-Next.js
-TypeScript
-API Integration
-Automation
-```
-
----
-
-## ⚙️ Installation
+# ⚙️ Installation
 
 Clone the repository
 
 ```bash
-git clone https://github.com/Chethumalli/chethan-portfolio.git
+git clone https://github.com/Chethumalli/Chethumalli-portfolio.git
 ```
 
-Go into the project directory
+Go to the project
 
 ```bash
-cd chethan-portfolio
+cd Chethumalli-portfolio
 ```
 
 Install dependencies
@@ -184,72 +304,103 @@ Install dependencies
 npm install
 ```
 
-Run the development server
+Create a `.env.local`
+
+```env
+RESEND_API_KEY=your_resend_api_key
+```
+
+Run locally
 
 ```bash
 npm run dev
 ```
 
-Open in browser
+Build
 
+```bash
+npm run build
 ```
-http://localhost:3000
+
+Production
+
+```bash
+npm start
 ```
 
 ---
 
-## 🚀 Deployment
+# 🌍 Deployment
 
 This project is deployed using **Vercel**.
 
-### Steps to deploy
-
-```
-1. Push project to GitHub
-2. Import repository into Vercel
-3. Deploy automatically
-```
-
-Live website
-
-```
-https://chethumalli-portfolio-mrw9.vercel.app
-```
----
-```
-/public/portfolio-preview.png
+```bash
+vercel
 ```
 
 ---
 
-## 📬 Contact
+# 📧 Contact
 
-If you'd like to collaborate or discuss opportunities.
+**Chethan C Malli**
 
-GitHub
+AI & Machine Learning Enthusiast | Full Stack Developer
 
-```
-https://github.com/Chethumalli
-```
+📍 Mangalore, Karnataka, India
 
-LinkedIn
+📧 Email: your-email@example.com
 
-```
+💼 LinkedIn
+
 https://linkedin.com/in/chethumalli
-```
+
+🐙 GitHub
+
+https://github.com/Chethumalli
+
+🌐 Portfolio
+
+https://chethumalli-portfolio.vercel.app
 
 ---
 
-# ⭐ Support
+# ⭐ Future Enhancements
 
-If you like this project, please consider giving it a **star ⭐ on GitHub.**
+- Blog Section
+- Admin Dashboard
+- Multi-language Support
+- Theme Switcher
+- Visitor Analytics
+- CMS Integration
+- Project Search
+- Resume Analytics
+- AI Chat Assistant
+- Testimonials Section
+- Project Gallery
+- More Interactive Animations
 
 ---
 
-# 🧑‍💻 Author
+# 🤝 Contributing
 
-**Chethan Malli**
+Contributions, issues, and feature requests are welcome.
 
-AI Developer | Full Stack Developer
+Feel free to fork the repository and submit a pull request.
 
-I build **AI tools, web applications and automation systems that solve real world problems.**
+---
+
+# 🙌 Acknowledgements
+
+Special thanks to the amazing open-source community and the developers behind
+
+- Next.js
+- React
+- Tailwind CSS
+- Framer Motion
+- Lucide React
+- Resend
+- Vercel
+
+---
+
+## ⭐ If you like this project, don't forget to Star ⭐ the repository!
