@@ -5,7 +5,7 @@ import { Briefcase } from "lucide-react"
 
 const experiences = [
   {
-    title: "-month Artificial Intelligence Internship",
+    title: "1 Month Artificial Intelligence Internship",
     company: "Codec Technologies India",
     period: "2026",
     description: [
