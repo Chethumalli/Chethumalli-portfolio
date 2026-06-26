@@ -40,7 +40,7 @@ const stats = [
 
 const achievements = [
   "AJIET Inter-colligiate Mini-Project Winner 2024",
-  "Represented VTU in South Zone Inter-University National LevelKabaddi Tournament 2026",
+  "Represented VTU in South Zone Inter-University National Level Kabaddi Tournament 2026",
   "VTU State Level Kabaddi Tournament Winner 2026",
   "VTU Manglore Division Level Kabaddi Tournament Runner 2026",
 ]
