@@ -12,6 +12,10 @@ const certifications = [
     issuer: "AWS Training & Certification",
   },
   {
+    title: "Technology Job Simulation",
+    issuer: "Deloitte",
+  },
+  {
     title: "Database Management System",
     issuer: "NPTEL",
   },
