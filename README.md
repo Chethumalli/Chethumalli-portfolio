@@ -76,9 +76,10 @@ Interactive education timeline showing
 Professional certifications from
 
 - NPTEL
+- AWS
 - IBM SkillsBuild
 - Infosys Springboard
-- Udemy
+- Deloitte
 - Other technical platforms
 
 ---
