@@ -50,13 +50,11 @@ export default function Hero() {
 
             {/* Name */}
 
-            <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight">
-
-              <span className="gradient-text">
-                Chethan C Malli
-              </span>
-
-            </h1>
+            <h1 className="mt-3 text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold leading-tight">
+  <span className="gradient-text">
+    Chethan C Malli
+  </span>
+</h1>
 
             {/* Type Animation */}
 
