@@ -1,82 +1,123 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { GraduationCap } from "lucide-react"
+import { motion } from "framer-motion";
+import { GraduationCap, CalendarDays } from "lucide-react";
 
 const education = [
   {
     year: "2023 - 2027",
     title: "Bachelor of Engineering",
     institute: "AJ Institute of Engineering & Technology",
-    subtitle: "Computer Science Engineering (AI & ML)"
+    subtitle: "Computer Science Engineering (Artificial Intelligence & Machine Learning)",
   },
   {
     year: "2021 - 2023",
-    title: " St SebastianPre-University Education",
-    institute: "PU College",
-    subtitle: "Science (PCMB)"
+    title: "Pre-University Education",
+    institute: "St. Sebastian PU College",
+    subtitle: "Science (PCMB)",
   },
   {
     year: "2010 - 2021",
-    title: "Sharada Ganapathi Vidya Kendra Secondary School",
-    institute: "High School",
-    subtitle: "SSLC"
-  }
-]
+    title: "Secondary School Education",
+    institute: "Sharada Ganapathi Vidya Kendra",
+    subtitle: "SSLC",
+  },
+];
 
 export default function Education() {
   return (
     <section
       id="education"
-      className="py-24 bg-black text-white px-6"
+      className="py-28 px-6 bg-transparent"
     >
-      <p className="text-center text-purple-500 tracking-widest mb-2">
-        EDUCATION
-      </p>
+      <div className="max-w-6xl mx-auto">
 
-      <h2 className="text-4xl font-bold text-center mb-16">
-        Education
-      </h2>
+        {/* Heading */}
 
-      <div className="max-w-4xl mx-auto relative">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <span className="inline-block px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold tracking-wide mb-5">
+            EDUCATION
+          </span>
 
-        <div className="absolute left-5 top-0 h-full w-1 bg-purple-600 hidden md:block" />
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900">
+            Academic Journey
+          </h2>
 
-        {education.map((edu, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-            viewport={{ once: true }}
-            className="relative md:pl-16 mb-12"
-          >
-            <div className="hidden md:flex absolute left-0 top-2 w-10 h-10 rounded-full bg-purple-600 items-center justify-center">
-              <GraduationCap size={20} />
-            </div>
+          <p className="mt-5 text-slate-600 max-w-2xl mx-auto leading-7">
+            My educational background has provided a strong foundation in
+            Artificial Intelligence, Machine Learning, software engineering,
+            and modern web technologies.
+          </p>
+        </motion.div>
 
-            <div className="bg-zinc-900 rounded-2xl border border-gray-800 p-6 hover:border-purple-500 transition hover:shadow-[0_0_25px_rgba(168,85,247,0.4)]">
+        {/* Timeline */}
 
-              <span className="text-purple-400 font-semibold">
-                {edu.year}
-              </span>
+        <div className="relative">
 
-              <h3 className="text-2xl font-bold mt-2">
-                {edu.title}
-              </h3>
+          {/* Vertical Line */}
 
-              <p className="text-gray-300 mt-2">
-                {edu.institute}
-              </p>
+          <div className="hidden md:block absolute left-6 top-0 h-full w-[2px] bg-blue-200"></div>
 
-              <p className="text-gray-500">
-                {edu.subtitle}
-              </p>
+          {education.map((edu, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.15,
+              }}
+              viewport={{ once: true }}
+              className="relative md:pl-20 mb-12"
+            >
 
-            </div>
-          </motion.div>
-        ))}
+              {/* Timeline Icon */}
+
+              <div className="hidden md:flex absolute left-0 top-4 w-12 h-12 rounded-full bg-blue-600 text-white items-center justify-center shadow-lg">
+                <GraduationCap size={22} />
+              </div>
+
+              {/* Card */}
+
+              <div className="bg-white border border-gray-200 rounded-3xl shadow-md hover:shadow-xl hover:border-blue-300 transition-all duration-300 p-8">
+
+                <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-3">
+
+                  <div>
+                    <h3 className="text-2xl font-bold text-slate-900">
+                      {edu.title}
+                    </h3>
+
+                    <p className="text-blue-600 font-semibold mt-1">
+                      {edu.institute}
+                    </p>
+                  </div>
+
+                  <div className="inline-flex items-center gap-2 text-slate-500 text-sm bg-gray-100 px-4 py-2 rounded-full w-fit">
+                    <CalendarDays size={16} />
+                    {edu.year}
+                  </div>
+
+                </div>
+
+                <p className="mt-5 text-slate-600 leading-7">
+                  {edu.subtitle}
+                </p>
+
+              </div>
+
+            </motion.div>
+          ))}
+
+        </div>
+
       </div>
     </section>
-  )
+  );
 }

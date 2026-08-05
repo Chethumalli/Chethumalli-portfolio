@@ -1,22 +1,22 @@
-"use client"
+"use client";
 
-import CountUp from "react-countup"
-import { motion } from "framer-motion"
+import CountUp from "react-countup";
+import { motion } from "framer-motion";
 import {
   Trophy,
   Award,
   FolderGit2,
   Code2,
   Brain,
-  BadgeCheck,
-} from "lucide-react"
+  Medal,
+} from "lucide-react";
 
 const stats = [
   {
     icon: <FolderGit2 size={34} />,
     number: 15,
     suffix: "+",
-    title: "Projects",
+    title: "Projects Completed",
   },
   {
     icon: <Code2 size={34} />,
@@ -34,110 +34,138 @@ const stats = [
     icon: <Brain size={34} />,
     number: 2,
     suffix: "+",
-    title: "Years Learning AI",
+    title: "Years in AI",
   },
-]
+];
 
 const achievements = [
-  "AJIET Inter-colligiate Mini-Project Winner 2024",
-  "Represented VTU in South Zone Inter-University National Level Kabaddi Tournament 2026",
-  "VTU State Level Kabaddi Tournament Winner 2026",
-  "VTU Manglore Division Level Kabaddi Tournament Runner 2026",
-]
+  "🏆 Winner – AJIET Inter-Collegiate Mini Project Competition (2024)",
+  "🏅 Represented VTU at the South Zone Inter-University National Kabaddi Tournament (2026)",
+  "🥇 Winner – VTU State Level Kabaddi Tournament (2026)",
+  "🥈 Runner-Up – VTU Mangalore Division Kabaddi Tournament (2026)",
+];
 
 export default function Achievements() {
   return (
     <section
       id="achievements"
-      className="py-24 bg-black text-white px-6"
+      className="py-28 px-6 bg-transparent"
     >
-      <p className="text-center tracking-widest text-purple-500 mb-2">
-        ACHIEVEMENTS
-      </p>
+      <div className="max-w-7xl mx-auto">
 
-      <h2 className="text-4xl font-bold text-center mb-16">
-        Achievements & Statistics
-      </h2>
+        {/* Heading */}
 
-      {/* Stats */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: .6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
 
-      <div className="grid md:grid-cols-4 gap-6 max-w-7xl mx-auto mb-20">
+          <span className="inline-block px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold tracking-wide mb-5">
+            ACHIEVEMENTS
+          </span>
 
-        {stats.map((item, index) => (
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900">
+            Achievements & Statistics
+          </h2>
 
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.5,
-              delay: index * 0.15,
-            }}
-            viewport={{ once: true }}
-            className="bg-zinc-900 border border-gray-800 rounded-2xl p-8 text-center hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.35)] transition"
-          >
+          <p className="mt-5 text-slate-600 max-w-2xl mx-auto leading-7">
+            A snapshot of my academic achievements, technical journey,
+            certifications, and extracurricular accomplishments.
+          </p>
 
-            <div className="text-purple-500 flex justify-center mb-5">
-              {item.icon}
-            </div>
+        </motion.div>
 
-            <h3 className="text-5xl font-bold text-white">
+        {/* Statistics */}
 
-              <CountUp
-                end={item.number}
-                duration={2}
-                enableScrollSpy
-              />
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 mb-20">
 
-              {item.suffix}
+          {stats.map((item, index) => (
 
-            </h3>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: .5,
+                delay: index * .1,
+              }}
+              viewport={{ once: true }}
+              whileHover={{
+                y: -8,
+                scale: 1.03,
+              }}
+              className="group bg-white rounded-3xl border border-gray-200 shadow-md hover:shadow-xl hover:border-blue-300 transition-all duration-300 p-8 text-center"
+            >
 
-            <p className="text-gray-400 mt-2">
-              {item.title}
-            </p>
+              <div className="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center mx-auto mb-6 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all">
 
-          </motion.div>
+                {item.icon}
 
-        ))}
+              </div>
 
-      </div>
+              <h3 className="text-5xl font-extrabold text-slate-900">
 
-      {/* Achievement Cards */}
+                <CountUp
+                  end={item.number}
+                  duration={2}
+                  enableScrollSpy
+                />
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                {item.suffix}
 
-        {achievements.map((item, index) => (
+              </h3>
 
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{
-              duration: 0.4,
-              delay: index * 0.08,
-            }}
-            viewport={{ once: true }}
-            whileHover={{
-              scale: 1.05,
-            }}
-            className="bg-zinc-900 rounded-xl border border-gray-800 p-6 hover:border-purple-500 transition"
-          >
+              <p className="mt-3 text-slate-600 font-medium">
+                {item.title}
+              </p>
 
-            <Trophy
-              className="text-purple-500 mb-4"
-              size={30}
-            />
+            </motion.div>
 
-            <p className="text-gray-300 leading-relaxed">
-              {item}
-            </p>
+          ))}
 
-          </motion.div>
+        </div>
 
-        ))}
+        {/* Achievement Cards */}
+
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+
+          {achievements.map((item, index) => (
+
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: .95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: .5,
+                delay: index * .08,
+              }}
+              viewport={{ once: true }}
+              whileHover={{
+                y: -8,
+              }}
+              className="group bg-white rounded-3xl border border-gray-200 shadow-md hover:shadow-xl hover:border-blue-300 transition-all duration-300 p-8"
+            >
+
+              <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+
+                <Medal size={28} />
+
+              </div>
+
+              <p className="text-slate-700 leading-8">
+                {item}
+              </p>
+
+            </motion.div>
+
+          ))}
+
+        </div>
 
       </div>
     </section>
-  )
+  );
 }

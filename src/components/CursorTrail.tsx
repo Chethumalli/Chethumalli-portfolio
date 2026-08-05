@@ -1,84 +1,90 @@
-"use client"
+"use client";
 
-import { useEffect } from "react"
+import { useEffect } from "react";
 
 export default function CursorTrail() {
-
   useEffect(() => {
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
 
-    const canvas = document.createElement("canvas")
-    const ctx = canvas.getContext("2d")!
+    if (!ctx) return;
 
-    document.body.appendChild(canvas)
+    document.body.appendChild(canvas);
 
-    canvas.style.position = "fixed"
-    canvas.style.top = "0"
-    canvas.style.left = "0"
-    canvas.style.pointerEvents = "none"
-    canvas.style.zIndex = "9999"
+    Object.assign(canvas.style, {
+      position: "fixed",
+      inset: "0",
+      pointerEvents: "none",
+      zIndex: "9998",
+    });
 
     const resize = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-    }
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
 
-    resize()
-    window.addEventListener("resize", resize)
+    resize();
 
-    const mouse = { x: 0, y: 0 }
+    window.addEventListener("resize", resize);
 
-    const trail: { x: number; y: number }[] = []
+    const mouse = { x: 0, y: 0 };
 
-    const trailLength = 20
+    const trail = Array.from({ length: 18 }, () => ({
+      x: 0,
+      y: 0,
+    }));
 
-    for (let i = 0; i < trailLength; i++) {
-      trail.push({ x: 0, y: 0 })
-    }
+    const move = (e: MouseEvent) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    };
 
-    window.addEventListener("mousemove", (e) => {
-      mouse.x = e.clientX
-      mouse.y = e.clientY
-    })
+    window.addEventListener("mousemove", move);
 
-    function animate() {
+    let animationId: number;
 
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      trail[0].x += (mouse.x - trail[0].x) * 0.25
-      trail[0].y += (mouse.y - trail[0].y) * 0.25
+      trail[0].x += (mouse.x - trail[0].x) * 0.25;
+      trail[0].y += (mouse.y - trail[0].y) * 0.25;
 
       for (let i = 1; i < trail.length; i++) {
-
-        trail[i].x += (trail[i - 1].x - trail[i].x) * 0.25
-        trail[i].y += (trail[i - 1].y - trail[i].y) * 0.25
-
+        trail[i].x += (trail[i - 1].x - trail[i].x) * 0.25;
+        trail[i].y += (trail[i - 1].y - trail[i].y) * 0.25;
       }
 
-      ctx.beginPath()
+      ctx.beginPath();
 
-      for (let i = 0; i < trail.length; i++) {
+      trail.forEach((point, index) => {
+        if (index === 0) {
+          ctx.moveTo(point.x, point.y);
+        } else {
+          ctx.lineTo(point.x, point.y);
+        }
+      });
 
-        const p = trail[i]
+      ctx.strokeStyle = "rgba(37,99,235,0.35)";
+      ctx.lineWidth = 3;
+      ctx.lineCap = "round";
+      ctx.lineJoin = "round";
+      ctx.shadowColor = "rgba(37,99,235,0.25)";
+      ctx.shadowBlur = 12;
 
-        if (i === 0) ctx.moveTo(p.x, p.y)
-        else ctx.lineTo(p.x, p.y)
+      ctx.stroke();
 
-      }
+      animationId = requestAnimationFrame(animate);
+    };
 
-      ctx.strokeStyle = "#a855f7"
-      ctx.lineWidth = 4
-      ctx.lineCap = "round"
-      ctx.shadowColor = "#a855f7"
-      ctx.shadowBlur = 20
+    animate();
 
-      ctx.stroke()
+    return () => {
+      cancelAnimationFrame(animationId);
+      window.removeEventListener("resize", resize);
+      window.removeEventListener("mousemove", move);
+      canvas.remove();
+    };
+  }, []);
 
-      requestAnimationFrame(animate)
-    }
-
-    animate()
-
-  }, [])
-
-  return null
+  return null;
 }

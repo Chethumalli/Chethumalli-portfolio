@@ -1,18 +1,18 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Briefcase } from "lucide-react"
+import { motion } from "framer-motion";
+import { Briefcase, CalendarDays } from "lucide-react";
 
 const experiences = [
   {
-    title: "1 Month Artificial Intelligence Internship",
+    title: "Artificial Intelligence Intern",
     company: "Codec Technologies India",
     period: "2026",
     description: [
       "Developed responsive business websites using Next.js and Tailwind CSS.",
-      "Built AI-powered web applications and automation solutions.",
-      "Developed modern UI/UX design."
-    ]
+      "Built AI-powered web applications and workflow automation solutions.",
+      "Designed modern, user-friendly interfaces with responsive layouts.",
+    ],
   },
   {
     title: "Frontend Developer",
@@ -21,8 +21,8 @@ const experiences = [
     description: [
       "Designed and developed a premium salon website.",
       "Implemented responsive layouts and SEO optimization.",
-      "Created engaging animations using Framer Motion."
-    ]
+      "Created engaging animations using Framer Motion.",
+    ],
   },
   {
     title: "Frontend Developer",
@@ -30,77 +30,122 @@ const experiences = [
     period: "2025",
     description: [
       "Developed a modern business website.",
-      "Integrated automation workflows and API features.",
-      "Focused on performance and responsive UI."
-    ]
+      "Integrated APIs and automation workflows.",
+      "Optimized performance and responsive user interfaces.",
+    ],
   },
   {
     title: "Core Member",
     company: "Artifex AI & Machine Learning Club",
     period: "2024 - Present",
     description: [
-      "Built the official AI club website.",
-      "Contributed to AI and web development projects.",
-      "Organized technical workshops and events."
-    ]
-  }
-]
+      "Built the official AI Club website.",
+      "Contributed to AI and Full Stack development projects.",
+      "Organized workshops, hackathons, and technical events.",
+    ],
+  },
+];
 
 export default function Experience() {
   return (
-    <section
-      id="experience"
-      className="py-24 bg-black text-white px-6"
-    >
-      <p className="text-center text-purple-500 tracking-widest mb-2">
-        EXPERIENCE
-      </p>
+    <section id="experience" className="py-28 px-6 bg-transparent">
+      <div className="max-w-6xl mx-auto">
 
-      <h2 className="text-4xl font-bold text-center mb-16">
-        Professional Experience
-      </h2>
+        {/* Heading */}
 
-      <div className="max-w-5xl mx-auto relative">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: .6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
 
-        <div className="absolute left-5 top-0 w-1 h-full bg-purple-600 hidden md:block" />
+          <span className="inline-block px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold tracking-wide mb-5">
+            EXPERIENCE
+          </span>
 
-        {experiences.map((exp, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-            viewport={{ once: true }}
-            className="relative md:pl-16 mb-12"
-          >
-            <div className="hidden md:flex absolute left-0 top-2 w-10 h-10 rounded-full bg-purple-600 items-center justify-center">
-              <Briefcase size={20} />
-            </div>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900">
+            Professional Experience
+          </h2>
 
-            <div className="bg-zinc-900 border border-gray-800 rounded-2xl p-6 hover:border-purple-500 transition hover:shadow-[0_0_25px_rgba(168,85,247,0.4)]">
+          <p className="mt-5 text-slate-600 max-w-2xl mx-auto leading-7">
+            My professional journey in AI, Full Stack Development,
+            and building modern web applications.
+          </p>
 
-              <h3 className="text-2xl font-bold">
-                {exp.title}
-              </h3>
+        </motion.div>
 
-              <p className="text-purple-400 mt-1">
-                {exp.company}
-              </p>
+        {/* Timeline */}
 
-              <p className="text-gray-500 text-sm mt-1 mb-4">
-                {exp.period}
-              </p>
+        <div className="relative">
 
-              <ul className="space-y-2 text-gray-300 list-disc list-inside">
-                {exp.description.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
+          {/* Timeline Line */}
 
-            </div>
-          </motion.div>
-        ))}
+          <div className="hidden md:block absolute left-6 top-0 h-full w-[2px] bg-blue-200"></div>
+
+          {experiences.map((exp, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.15,
+              }}
+              viewport={{ once: true }}
+              className="relative md:pl-20 mb-12"
+            >
+
+              {/* Timeline Icon */}
+
+              <div className="hidden md:flex absolute left-0 top-4 w-12 h-12 rounded-full bg-blue-600 text-white items-center justify-center shadow-lg">
+                <Briefcase size={22} />
+              </div>
+
+              {/* Card */}
+
+              <div className="bg-white border border-gray-200 rounded-3xl shadow-md hover:shadow-xl hover:border-blue-300 transition-all duration-300 p-8">
+
+                <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-3">
+
+                  <div>
+                    <h3 className="text-2xl font-bold text-slate-900">
+                      {exp.title}
+                    </h3>
+
+                    <p className="text-blue-600 font-semibold mt-1">
+                      {exp.company}
+                    </p>
+                  </div>
+
+                  <div className="inline-flex items-center gap-2 text-slate-500 text-sm bg-gray-100 px-4 py-2 rounded-full w-fit">
+                    <CalendarDays size={16} />
+                    {exp.period}
+                  </div>
+
+                </div>
+
+                <ul className="mt-6 space-y-3">
+                  {exp.description.map((item, i) => (
+                    <li
+                      key={i}
+                      className="flex items-start gap-3 text-slate-600 leading-7"
+                    >
+                      <span className="mt-2 w-2 h-2 rounded-full bg-blue-500 flex-shrink-0"></span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+              </div>
+
+            </motion.div>
+          ))}
+
+        </div>
+
       </div>
     </section>
-  )
+  );
 }

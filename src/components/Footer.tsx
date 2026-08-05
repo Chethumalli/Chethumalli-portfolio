@@ -1,66 +1,115 @@
-"use client"
+"use client";
 
 import {
   Github,
   Linkedin,
   Mail,
-} from "lucide-react"
+  Heart,
+} from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-zinc-800 bg-black py-10 mt-20">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+    <footer className="mt-24 border-t border-gray-200 bg-white">
+      <div className="max-w-7xl mx-auto px-6 py-12">
 
-        {/* Left */}
-        <div className="text-center md:text-left">
-          <h2 className="text-2xl font-bold text-purple-500">
-            Chethan C Malli
-          </h2>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-10">
 
-          <p className="text-gray-400 mt-2">
-            AI & Machine Learning Enthusiast • Full Stack Developer
+          {/* Left */}
+
+          <div className="text-center md:text-left">
+
+            <h2 className="text-3xl font-extrabold text-slate-900">
+              Chethan
+              <span className="text-blue-600">.</span>
+            </h2>
+
+            <p className="mt-3 text-slate-600 leading-7">
+              AI & Machine Learning Enthusiast
+              <br />
+              Full Stack Developer
+            </p>
+
+          </div>
+
+          {/* Center */}
+
+          <div className="text-center">
+
+            <p className="text-slate-600">
+              Built with
+              <span className="font-semibold text-blue-600">
+                {" "}Next.js
+              </span>
+              {" "}&
+              <span className="font-semibold text-blue-600">
+                {" "}Tailwind CSS
+              </span>
+            </p>
+
+          </div>
+
+          {/* Right */}
+
+          <div className="flex items-center gap-4">
+
+            <a
+              href="https://github.com/Chethumalli"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="w-12 h-12 rounded-xl border border-gray-200 bg-white shadow-sm flex items-center justify-center text-slate-700 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300"
+            >
+              <Github size={20} />
+            </a>
+
+            <a
+              href="https://linkedin.com/in/chethumalli"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="w-12 h-12 rounded-xl border border-gray-200 bg-white shadow-sm flex items-center justify-center text-slate-700 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300"
+            >
+              <Linkedin size={20} />
+            </a>
+
+            <a
+              href="mailto:chethumalli13@gmail.com"
+              aria-label="Email"
+              className="w-12 h-12 rounded-xl border border-gray-200 bg-white shadow-sm flex items-center justify-center text-slate-700 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300"
+            >
+              <Mail size={20} />
+            </a>
+
+          </div>
+
+        </div>
+
+        {/* Bottom */}
+
+        <div className="mt-10 pt-8 border-t border-gray-200 text-center">
+
+          <p className="flex flex-wrap items-center justify-center gap-2 text-slate-500 text-sm">
+
+            © {new Date().getFullYear()} Chethan C Malli. All Rights Reserved.
+
           </p>
-        </div>
 
-        {/* Social Icons */}
-        <div className="flex items-center gap-5">
+          <p className="mt-3 flex items-center justify-center gap-2 text-sm text-slate-500">
 
-          <a
-            href="https://github.com/Chethumalli"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-purple-500 transition duration-300"
-            aria-label="GitHub"
-          >
-            <Github size={24} />
-          </a>
+            Made with
 
-          <a
-            href="https://linkedin.com/in/chethumalli"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-purple-500 transition duration-300"
-            aria-label="LinkedIn"
-          >
-            <Linkedin size={24} />
-          </a>
+            <Heart
+              size={16}
+              className="fill-red-500 text-red-500"
+            />
 
-          <a
-            href="mailto:chethumalli13@example.com"
-            className="text-gray-400 hover:text-purple-500 transition duration-300"
-            aria-label="Email"
-          >
-            <Mail size={24} />
-          </a>
+            using Next.js & Tailwind CSS
+
+          </p>
 
         </div>
-      </div>
 
-      <div className="mt-8 border-t border-zinc-800 pt-6">
-        <p className="text-center text-sm text-gray-500">
-          © {new Date().getFullYear()} Chethan C Malli. All Rights Reserved.
-        </p>
       </div>
     </footer>
-  )
+  );
 }

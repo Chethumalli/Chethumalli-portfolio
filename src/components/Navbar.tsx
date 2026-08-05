@@ -1,104 +1,81 @@
-"use client"
+"use client";
 
-import { useState } from "react"
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navLinks = [
+    { name: "Home", href: "#home" },
+    { name: "Skills", href: "#skills" },
+    { name: "Experience", href: "#experience" },
+    { name: "Education", href: "#education" },
+    { name: "Certifications", href: "#certifications" },
+    { name: "Achievements", href: "#achievements" },
+    { name: "Projects", href: "#projects" },
+    { name: "GitHub", href: "#github" },
+    { name: "Contact", href: "#contact" },
+  ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-black/60 border-b border-gray-800">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200 shadow-sm">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+
         {/* Logo */}
-        <h1 className="text-xl font-bold text-purple-500">
-          Chethan C Malli
-        </h1>
+        <a
+          href="#home"
+          className="text-2xl font-extrabold tracking-tight text-slate-900 transition hover:text-blue-600"
+        >
+          Chethan
+          <span className="text-blue-600">.</span>
+        </a>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex gap-8 text-gray-300">
-          <a href="#home" className="hover:text-purple-500 transition">
-            Home
-          </a>
-
-          <a href="#skills" className="hover:text-purple-500 transition">
-            Skills
-          </a>
-          <a href="#experience" className="hover:text-purple-500 transition">
-            Experience
-          </a>
-
-          <a href="#education" className="hover:text-purple-500 transition">
-            Education
-          </a>
-
-          <a href="#certifications" className="hover:text-purple-500 transition">
-            Certifications
-          </a>
-
-          <a href="#achievements"className="hover:text-purple-500 transition">
-            Achievements
-          </a>
-
-          <a href="#projects" className="hover:text-purple-500 transition">
-            Projects
-          </a>
-
-          <a href="#github" className="hover:text-purple-500 transition">
-            GitHub
-          </a>
-
-          <a href="#contact" className="hover:text-purple-500 transition">
-            Contact
-          </a>
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="relative text-[15px] font-medium text-slate-600 transition duration-300 hover:text-blue-600 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              {item.name}
+            </a>
+          ))}
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Button */}
         <button
-          className="md:hidden text-white text-2xl"
           onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition"
         >
-          ☰
+          {menuOpen ? (
+            <X className="w-6 h-6 text-slate-900" />
+          ) : (
+            <Menu className="w-6 h-6 text-slate-900" />
+          )}
         </button>
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-black border-t border-gray-800 flex flex-col items-center py-4 gap-4">
-          <a href="#home" onClick={() => setMenuOpen(false)}>
-            Home
-          </a>
-
-          <a href="#skills" onClick={() => setMenuOpen(false)}>
-            Skills
-          </a>
-
-          <a href="#experience" onClick={() => setMenuOpen(false)}>
-            Experience
-          </a>
-
-          <a href="#education" onClick={() => setMenuOpen(false)}>
-            Education
-          </a>
-
-          <a href="#certifications" onClick={() => setMenuOpen(false)}>
-            Certifications
-          </a>
-          <a href="#achievements"onClick={() => setMenuOpen(false)}>
-            Achievements
-          </a>
-
-          <a href="#projects" onClick={() => setMenuOpen(false)}>
-            Projects
-          </a>
-
-          <a href="#github" onClick={() => setMenuOpen(false)}>
-            GitHub
-          </a>
-
-          <a href="#contact" onClick={() => setMenuOpen(false)}>
-            Contact
-          </a>
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ${
+          menuOpen ? "max-h-[500px]" : "max-h-0"
+        }`}
+      >
+        <div className="bg-white border-t border-gray-200 shadow-lg px-6 py-5 flex flex-col gap-5">
+          {navLinks.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              onClick={() => setMenuOpen(false)}
+              className="text-slate-700 font-medium hover:text-blue-600 transition"
+            >
+              {item.name}
+            </a>
+          ))}
         </div>
-      )}
+      </div>
     </nav>
-  )
+  );
 }
