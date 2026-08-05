@@ -94,7 +94,7 @@ export default function Projects() {
       description:
         "Official AI Club website featuring events and projects.",
       tech: ["Next.js", "React", "Tailwind CSS"],
-      website: "https://artifex-ajiet.vercel.app/",
+      website: "https://artifexaiml.vercel.app/",
     },
 
     {
