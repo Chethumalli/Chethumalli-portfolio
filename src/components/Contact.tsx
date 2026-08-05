@@ -162,7 +162,7 @@ export default function Contact() {
 
                   <p className="font-semibold">
 
-                    +91 XXXXX XXXXX
+                    +91 9483606519
 
                   </p>
 
