@@ -21,7 +21,7 @@ export default function Footer() {
 
             <h2 className="text-3xl font-extrabold text-slate-900">
 
-              Chethan
+              Chethan C Malli
               <span className="text-blue-600">.</span>
 
             </h2>
