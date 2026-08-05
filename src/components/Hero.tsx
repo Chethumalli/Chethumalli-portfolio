@@ -95,33 +95,40 @@ export default function Hero() {
 
             {/* Buttons */}
 
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+           <div className="mt-10 flex flex-col sm:flex-row flex-wrap gap-4 justify-center lg:justify-start">
 
-              <a
-                href="#projects"
-                className="btn-primary px-8 py-4 text-center"
-              >
-                View Projects
-              </a>
+  {/* View Projects */}
 
-              <a
-                href="/resume.pdf"
-                download
-                className="btn-outline px-8 py-4 flex items-center justify-center gap-3"
-              >
-                <FaFileDownload />
+  <a
+    href="#projects"
+    className="btn-primary px-8 py-4 text-center"
+  >
+    View Projects
+  </a>
 
-                Resume
-              </a>
+  {/* Download CV */}
 
-              <a
-                href="#contact"
-                className="btn-outline px-8 py-4 text-center"
-              >
-                Contact
-              </a>
+  <a
+    href="/resume.pdf"
+    download
+    className="btn-outline px-8 py-4 flex items-center justify-center gap-2"
+  >
+    <FaFileDownload size={18} />
+    Download CV
+  </a>
 
-            </div>
+  {/* View Resume */}
+
+  <a
+    href="/resume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn-outline px-8 py-4 text-center"
+  >
+    View Resume
+  </a>
+
+</div>
 
             {/* Social Icons */}
 
