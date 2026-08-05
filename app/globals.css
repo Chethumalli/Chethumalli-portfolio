@@ -1,8 +1,27 @@
 @import "tailwindcss";
 
+/* ============================= */
+/*         DESIGN SYSTEM         */
+/* ============================= */
+
 :root {
   --background: #ffffff;
-  --foreground: #111827;
+  --foreground: #0f172a;
+
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+
+  --secondary: #3b82f6;
+
+  --border: #e5e7eb;
+
+  --card: #ffffff;
+
+  --muted: #64748b;
+
+  --shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+
+  --radius: 24px;
 }
 
 @theme inline {
@@ -13,8 +32,15 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* Remove automatic dark mode */
-/* DO NOT ADD prefers-color-scheme */
+/* ============================= */
+/*          RESET                */
+/* ============================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 html {
   scroll-behavior: smooth;
@@ -23,34 +49,178 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
+
   font-family: Arial, Helvetica, sans-serif;
+
   overflow-x: hidden;
+
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+
+  -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
+/* Selection */
+
+::selection {
+  background: rgba(37, 99, 235, 0.2);
 }
 
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
+/* ============================= */
+/*      RESPONSIVE CONTAINER     */
+/* ============================= */
+
+.container-custom {
+  width: 100%;
+
+  max-width: 1280px;
+
+  margin-inline: auto;
+
+  padding-inline: 20px;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding-inline: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-inline: 32px;
+  }
+}
+
+/* ============================= */
+/*        SECTION SPACING        */
+/* ============================= */
+
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .section-padding {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+/* ============================= */
+/*         CARD SYSTEM           */
+/* ============================= */
+
+.glass-card {
+  background: white;
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow);
+
+  transition: all 0.35s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #bfdbfe;
+
+  box-shadow: 0 18px 45px rgba(37, 99, 235, 0.12);
+}
+
+/* ============================= */
+/*        BUTTON SYSTEM          */
+/* ============================= */
+
+.btn-primary {
+  background: var(--primary);
+
+  color: white;
+
+  border-radius: 14px;
+
+  transition: .3s;
+
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid #d1d5db;
+
+  border-radius: 14px;
+
+  transition: .3s;
+}
+
+.btn-outline:hover {
+  border-color: var(--primary);
+
+  color: var(--primary);
+}
+
+/* ============================= */
+/*      TEXT GRADIENT            */
+/* ============================= */
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #0f172a,
+    #2563eb,
+    #4f46e5
+  );
+
+  -webkit-background-clip: text;
+
+  color: transparent;
+}
+
+/* ============================= */
+/*      ANIMATED GRID            */
+/* ============================= */
+
+@keyframes gridMove {
+
+  from {
+    transform: translateY(0);
   }
 
-  50% {
-    background-position: 100% 50%;
+  to {
+    transform: translateY(60px);
   }
 
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradientMove 6s ease infinite;
+.animate-grid {
+
+  animation: gridMove 14s linear infinite;
+
 }
+
+/* ============================= */
+/*       FLOAT EFFECT            */
+/* ============================= */
 
 @keyframes float {
+
   0% {
     transform: translateY(0px);
   }
@@ -62,38 +232,102 @@ body {
   100% {
     transform: translateY(0px);
   }
+
 }
 
 .float {
+
   animation: float 4s ease-in-out infinite;
+
 }
 
-.cursor-glow {
-  position: fixed;
-  width: 40px;
-  height: 40px;
-  border-radius: 9999px;
-  pointer-events: none;
-  z-index: 9999;
-  background: radial-gradient(
-    circle,
-    rgba(37, 99, 235, 0.45) 0%,
-    rgba(37, 99, 235, 0.18) 45%,
-    transparent 75%
-  );
-  filter: blur(14px);
-}
+/* ============================= */
+/*      GRADIENT ANIMATION       */
+/* ============================= */
 
-@keyframes gridMove {
-  from {
-    transform: translateY(0px);
+@keyframes gradientMove {
+
+  0% {
+    background-position: 0% 50%;
   }
 
-  to {
-    transform: translateY(60px);
+  50% {
+    background-position: 100% 50%;
   }
+
+  100% {
+    background-position: 0% 50%;
+  }
+
 }
 
-.animate-grid {
-  animation: gridMove 12s linear infinite;
+.animate-gradient {
+
+  background-size: 200% 200%;
+
+  animation: gradientMove 6s ease infinite;
+
+}
+
+/* ============================= */
+/*      SCROLLBAR                */
+/* ============================= */
+
+::-webkit-scrollbar {
+
+  width: 8px;
+
+}
+
+::-webkit-scrollbar-track {
+
+  background: #f8fafc;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+  background: #94a3b8;
+
+  border-radius: 999px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+  background: #2563eb;
+
+}
+
+/* ============================= */
+/*      MOBILE OPTIMIZATION      */
+/* ============================= */
+
+img {
+
+  max-width: 100%;
+
+  height: auto;
+
+}
+
+button {
+
+  cursor: pointer;
+
+}
+
+input,
+textarea {
+
+  font: inherit;
+
+}
+
+/* Prevent horizontal overflow */
+
+section {
+
+  overflow-x: hidden;
+
 }

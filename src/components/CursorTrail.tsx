@@ -64,11 +64,11 @@ export default function CursorTrail() {
         }
       });
 
-      ctx.strokeStyle = "rgba(37,99,235,0.35)";
+     ctx.strokeStyle = "#2563eb";
       ctx.lineWidth = 3;
       ctx.lineCap = "round";
       ctx.lineJoin = "round";
-      ctx.shadowColor = "rgba(37,99,235,0.25)";
+      ctx.shadowColor = "#2563eb";
       ctx.shadowBlur = 12;
 
       ctx.stroke();

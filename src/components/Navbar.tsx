@@ -2,80 +2,118 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const navItems = [
+  { label: "Home", href: "#home" },
+  { label: "Skills", href: "#skills" },
+  { label: "Experience", href: "#experience" },
+  { label: "Education", href: "#education" },
+  { label: "Certifications", href: "#certifications" },
+  { label: "Achievements", href: "#achievements" },
+  { label: "Projects", href: "#projects" },
+  { label: "GitHub", href: "#github" },
+  { label: "Contact", href: "#contact" },
+];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "Skills", href: "#skills" },
-    { name: "Experience", href: "#experience" },
-    { name: "Education", href: "#education" },
-    { name: "Certifications", href: "#certifications" },
-    { name: "Achievements", href: "#achievements" },
-    { name: "Projects", href: "#projects" },
-    { name: "GitHub", href: "#github" },
-    { name: "Contact", href: "#contact" },
-  ];
-
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200 shadow-sm">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <header className="fixed top-0 left-0 w-full z-50 border-b border-gray-200 bg-white/80 backdrop-blur-xl">
+      <div className="container-custom h-20 flex items-center justify-between">
 
         {/* Logo */}
+
         <a
           href="#home"
-          className="text-2xl font-extrabold tracking-tight text-slate-900 transition hover:text-blue-600"
+          className="text-2xl font-extrabold text-slate-900 tracking-tight"
         >
           Chethan
           <span className="text-blue-600">.</span>
         </a>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((item) => (
+
+        <nav className="hidden lg:flex items-center gap-8">
+
+          {navItems.map((item) => (
             <a
-              key={item.name}
+              key={item.label}
               href={item.href}
-              className="relative text-[15px] font-medium text-slate-600 transition duration-300 hover:text-blue-600 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full"
+              className="relative text-[15px] font-medium text-slate-600 transition hover:text-blue-600 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all hover:after:w-full"
             >
-              {item.name}
+              {item.label}
             </a>
           ))}
-        </div>
 
-        {/* Mobile Button */}
+        </nav>
+
+        {/* Desktop Button */}
+
+        <a
+          href="#contact"
+          className="hidden lg:inline-flex btn-primary px-5 py-3"
+        >
+          Hire Me
+        </a>
+
+        {/* Mobile Menu Button */}
+
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition"
+          className="lg:hidden rounded-xl border border-gray-200 p-2"
         >
-          {menuOpen ? (
-            <X className="w-6 h-6 text-slate-900" />
-          ) : (
-            <Menu className="w-6 h-6 text-slate-900" />
-          )}
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
+
       </div>
 
       {/* Mobile Menu */}
-      <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${
-          menuOpen ? "max-h-[500px]" : "max-h-0"
-        }`}
-      >
-        <div className="bg-white border-t border-gray-200 shadow-lg px-6 py-5 flex flex-col gap-5">
-          {navLinks.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              onClick={() => setMenuOpen(false)}
-              className="text-slate-700 font-medium hover:text-blue-600 transition"
-            >
-              {item.name}
-            </a>
-          ))}
-        </div>
-      </div>
-    </nav>
+
+      <AnimatePresence>
+
+        {menuOpen && (
+
+          <motion.div
+            initial={{ opacity: 0, y: -15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.25 }}
+            className="lg:hidden border-t border-gray-200 bg-white"
+          >
+
+            <nav className="container-custom flex flex-col py-6 gap-5">
+
+              {navItems.map((item) => (
+
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="text-lg font-medium text-slate-700 hover:text-blue-600 transition"
+                >
+                  {item.label}
+                </a>
+
+              ))}
+
+              <a
+                href="#contact"
+                onClick={() => setMenuOpen(false)}
+                className="btn-primary mt-3 text-center py-3"
+              >
+                Hire Me
+              </a>
+
+            </nav>
+
+          </motion.div>
+
+        )}
+
+      </AnimatePresence>
+
+    </header>
   );
 }

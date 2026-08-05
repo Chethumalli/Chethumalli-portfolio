@@ -14,8 +14,35 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Chethan C Malli | AI & Full Stack Developer",
+
   description:
-    "Portfolio of Chethan C Malli - AI/ML Enthusiast and Full Stack Developer.",
+    "Portfolio of Chethan C Malli - AI Engineer, Full Stack Developer and ML Enthusiast.",
+
+  keywords: [
+    "Chethan Malli",
+    "Portfolio",
+    "AI Engineer",
+    "Machine Learning",
+    "Next.js",
+    "React",
+    "Full Stack Developer",
+  ],
+
+  authors: [
+    {
+      name: "Chethan C Malli",
+    },
+  ],
+
+  openGraph: {
+    title: "Chethan C Malli | AI & Full Stack Developer",
+    description:
+      "Portfolio of Chethan C Malli - AI Engineer, Full Stack Developer and ML Enthusiast.",
+
+    images: ["/profile.png"],
+
+    type: "website",
+  },
 };
 
 export default function RootLayout({
