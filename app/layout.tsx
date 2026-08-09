@@ -36,10 +36,11 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "Chethan C Malli | AI & Full Stack Developer",
+
     description:
       "Portfolio of Chethan C Malli - AI Engineer, Full Stack Developer and ML Enthusiast.",
 
-    images: ["/profile.png"],
+    images: ["/p.png"],
 
     type: "website",
   },
@@ -53,7 +54,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-black`}
+        className={`
+          ${geistSans.variable}
+          ${geistMono.variable}
+          antialiased
+          bg-black
+          text-white
+          min-h-screen
+        `}
       >
         {children}
       </body>

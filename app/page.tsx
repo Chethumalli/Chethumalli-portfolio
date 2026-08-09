@@ -4,8 +4,6 @@ import Skills from "../src/components/Skills";
 import Projects from "../src/components/Projects";
 import GithubStats from "../src/components/GithubStats";
 import Contact from "../src/components/Contact";
-import CursorGlow from "../src/components/CursorGlow";
-import CursorTrail from "../src/components/CursorTrail";
 import Certifications from "../src/components/Certifications";
 import Experience from "../src/components/Experience";
 import Education from "../src/components/Education";
@@ -17,15 +15,16 @@ import ScrollProgress from "../src/components/ScrollProgress";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-transparent text-black overflow-x-hidden">
-      <AnimatedBackground />
+    <main className="min-h-screen bg-black text-white overflow-x-hidden">
 
-      <CursorGlow />
-      <CursorTrail />
+      {/* Loading & Scroll UI */}
       <LoadingScreen />
       <ScrollProgress />
 
+      {/* Navigation */}
       <Navbar />
+
+      {/* Main Portfolio */}
       <Hero />
       <Skills />
       <Experience />
@@ -35,7 +34,10 @@ export default function Home() {
       <Projects />
       <GithubStats />
       <Contact />
+
+      {/* Footer */}
       <Footer />
+
     </main>
   );
 }
