@@ -42,7 +42,6 @@ export default function Hero() {
             items-center
           "
         >
-
           {/* ========================================================= */}
           {/* LEFT CONTENT */}
           {/* ========================================================= */}
@@ -59,7 +58,6 @@ export default function Hero() {
               z-20
             "
           >
-
             {/* Availability */}
 
             <div
@@ -129,9 +127,7 @@ export default function Hero() {
                 leading-tight
               "
             >
-              <span className="gradient-text">
-                Chethan C Malli
-              </span>
+              <span className="gradient-text">Chethan C Malli</span>
             </h1>
 
             {/* Type Animation */}
@@ -192,9 +188,7 @@ export default function Hero() {
               solve meaningful problems.
             </p>
 
-            {/* ========================================================= */}
-            {/* BUTTONS */}
-            {/* ========================================================= */}
+            {/* Buttons */}
 
             <div
               className="
@@ -210,7 +204,6 @@ export default function Hero() {
                 lg:justify-start
               "
             >
-
               <a
                 href="#projects"
                 className="
@@ -259,12 +252,9 @@ export default function Hero() {
               >
                 View Resume
               </a>
-
             </div>
 
-            {/* ========================================================= */}
-            {/* SOCIAL ICONS */}
-            {/* ========================================================= */}
+            {/* Social Icons */}
 
             <div
               className="
@@ -277,7 +267,6 @@ export default function Hero() {
                 sm:gap-5
               "
             >
-
               <a
                 href="https://github.com/Chethumalli"
                 target="_blank"
@@ -296,7 +285,6 @@ export default function Hero() {
                   flex
                   items-center
                   justify-center
-                  shadow-sm
                   hover:bg-blue-600
                   hover:text-white
                   hover:border-blue-600
@@ -327,7 +315,6 @@ export default function Hero() {
                   flex
                   items-center
                   justify-center
-                  shadow-sm
                   hover:bg-blue-600
                   hover:text-white
                   hover:border-blue-600
@@ -356,7 +343,6 @@ export default function Hero() {
                   flex
                   items-center
                   justify-center
-                  shadow-sm
                   hover:bg-blue-600
                   hover:text-white
                   hover:border-blue-600
@@ -368,11 +354,8 @@ export default function Hero() {
               >
                 <FaEnvelope size={19} />
               </a>
-
             </div>
-
           </motion.div>
-
 
           {/* ========================================================= */}
           {/* RIGHT PROFILE */}
@@ -395,7 +378,6 @@ export default function Hero() {
               min-w-0
             "
           >
-
             {/* PROFILE AREA */}
 
             <div
@@ -403,72 +385,125 @@ export default function Hero() {
                 relative
 
                 w-[270px]
-                h-[370px]
+                h-[400px]
 
                 sm:w-[330px]
-                sm:h-[440px]
+                sm:h-[470px]
 
                 md:w-[380px]
-                md:h-[490px]
+                md:h-[520px]
 
                 lg:w-[430px]
-                lg:h-[550px]
+                lg:h-[570px]
 
                 xl:w-[470px]
-                xl:h-[580px]
+                xl:h-[600px]
               "
             >
 
               {/* ===================================================== */}
-              {/* BLUE CIRCLE */}
-              {/* BEHIND HEAD */}
+              {/* BLUE CURVED RECTANGULAR BACKGROUND */}
               {/* ===================================================== */}
 
-              <div
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  scale: 0.9,
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                transition={{
+                  duration: 0.9,
+                  delay: 0.25,
+                }}
                 className="
                   absolute
 
-                  top-[23%]
+                  top-[8%]
                   left-1/2
                   -translate-x-1/2
 
-                  w-[74%]
-                  aspect-square
-
-                  rounded-full
+                  w-[72%]
+                  h-[72%]
 
                   bg-gradient-to-br
                   from-blue-400
                   via-blue-600
                   to-blue-800
 
-                  shadow-[0_20px_70px_rgba(37,99,235,0.35)]
+                  rounded-[45%_45%_18%_18%]
+
+                  shadow-[0_25px_90px_rgba(37,99,235,0.35)]
 
                   z-0
                 "
               />
 
               {/* ===================================================== */}
-              {/* SUBTLE BLUE GLOW */}
+              {/* INNER BLUE GLOW */}
               {/* ===================================================== */}
 
               <div
                 className="
                   absolute
 
-                  top-[36%]
+                  top-[12%]
                   left-1/2
                   -translate-x-1/2
 
-                  w-[74%]
-                  aspect-square
+                  w-[75%]
+                  h-[70%]
 
-                  rounded-full
+                  rounded-[45%_45%_20%_20%]
 
-                  bg-blue-500/10
+                  bg-blue-500/20
                   blur-3xl
 
                   z-[-1]
+                "
+              />
+
+              {/* ===================================================== */}
+              {/* SMALL DECORATIVE BLUE CROSS / RECTANGLE */}
+              {/* ===================================================== */}
+
+              <div
+                className="
+                  absolute
+                  top-12%]
+                  left-[10%]
+
+                  w-10
+                  h-10
+
+                  border-2
+                  border-blue-400/40
+
+                  rounded-xl
+
+                  rotate-12
+
+                  z-0
+                "
+              />
+
+              <div
+                className="
+                  absolute
+                  top-[8%]
+                  right-[26%]
+
+                  w-3
+                  h-3
+
+                  rounded-full
+                  bg-blue-400
+
+                  shadow-[0_0_20px_rgba(59,130,246,0.8)]
+
+                  z-0
                 "
               />
 
@@ -506,7 +541,7 @@ export default function Hero() {
                   "
                   className="
                     object-contain
-                    object-centre
+                    object-center
 
                     scale-[1.00]
                     sm:scale-[1.02]
@@ -514,15 +549,36 @@ export default function Hero() {
                     lg:scale-[1.06]
                     xl:scale-[1.08]
 
-                    drop-shadow-[0_20px_30px_rgba(0,0,0,0.35)]
+                    drop-shadow-[0_20px_30px_rgba(0,0,0,0.45)]
                   "
                 />
               </motion.div>
 
+              {/* ===================================================== */}
+              {/* BOTTOM BLUE CURVED BASE */}
+              {/* ===================================================== */}
+
+              <div
+                className="
+                  absolute
+                  bottom-[7%]
+                  left-1/2
+                  -translate-x-1/2
+
+                  w-[68%]
+                  h-[8%]
+
+                  rounded-full
+
+                  bg-blue-600/30
+                  blur-xl
+
+                  z-0
+                "
+              />
+
             </div>
-
           </motion.div>
-
         </div>
       </div>
     </section>

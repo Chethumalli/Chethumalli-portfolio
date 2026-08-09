@@ -5,11 +5,12 @@ import {
   Linkedin,
   Mail,
   ArrowUp,
+  MapPin,
 } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-white/10 bg-black text-white">
+    <footer className="relative overflow-hidden bg-black">
 
       {/* Subtle blue glow */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -35,6 +36,27 @@ export default function Footer() {
               about building intelligent software
               that solves real-world problems.
             </p>
+
+            {/* Location */}
+            <div
+              className="
+                mt-5
+                inline-flex
+                items-center
+                gap-2
+                text-gray-400
+                text-sm
+              "
+            >
+              <MapPin
+                size={17}
+                className="text-blue-500"
+              />
+
+              <span>
+                Mangalore, Karnataka, India
+              </span>
+            </div>
 
             {/* Small status */}
             <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2">

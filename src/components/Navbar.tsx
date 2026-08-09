@@ -1,18 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Github } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
   { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
-  { label: "Education", href: "#education" },
-  { label: "Certifications", href: "#certifications" },
-  { label: "Achievements", href: "#achievements" },
   { label: "Projects", href: "#projects" },
-  { label: "GitHub", href: "#github" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -26,18 +23,17 @@ export default function Navbar() {
         top-0
         left-0
         right-0
-        z-50
-        bg-black/80
-        backdrop-blur-xl
+        z-[1000]
         border-b
         border-white/10
+        bg-black/80
+        backdrop-blur-xl
       "
     >
       <div
         className="
           container-custom
-          h-[72px]
-          sm:h-[76px]
+          h-20
           flex
           items-center
           justify-between
@@ -53,10 +49,12 @@ export default function Navbar() {
             text-xl
             sm:text-2xl
             font-extrabold
-            text-white
             tracking-tight
-            transition
+            text-white
             hover:text-blue-400
+            transition-colors
+            duration-300
+            shrink-0
           "
         >
           Chethan
@@ -64,36 +62,34 @@ export default function Navbar() {
         </a>
 
         {/* ===================================================== */}
-        {/* DESKTOP MENU */}
+        {/* DESKTOP NAVIGATION */}
         {/* ===================================================== */}
 
-        <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+        <nav className="hidden lg:flex items-center gap-7 xl:gap-9">
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
               className="
                 relative
-                text-[14px]
-                xl:text-[15px]
+                text-sm
                 font-medium
                 text-gray-400
-                transition-all
+                hover:text-white
+                transition-colors
                 duration-300
-
-                hover:text-blue-400
 
                 after:absolute
                 after:left-0
-                after:-bottom-1
+                after:-bottom-2
                 after:h-[2px]
                 after:w-0
-                after:bg-blue-500
                 after:rounded-full
-                after:transition-all
-                after:duration-300
+                after:bg-blue-500
 
                 hover:after:w-full
+                after:transition-all
+                after:duration-300
               "
             >
               {item.label}
@@ -102,23 +98,69 @@ export default function Navbar() {
         </nav>
 
         {/* ===================================================== */}
-        {/* DESKTOP BUTTON */}
+        {/* RIGHT SIDE */}
         {/* ===================================================== */}
 
-        <a
-          href="#contact"
-          className="
-            hidden
-            lg:inline-flex
-            btn-primary
-            px-5
-            py-3
-            items-center
-            justify-center
-          "
-        >
-          Hire Me
-        </a>
+        <div className="hidden lg:flex items-center gap-3">
+          {/* GitHub */}
+
+          <a
+            href="https://github.com/Chethumalli"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="
+              w-10
+              h-10
+              rounded-xl
+              border
+              border-white/10
+              bg-white/5
+              text-gray-300
+              flex
+              items-center
+              justify-center
+
+              hover:bg-blue-600
+              hover:text-white
+              hover:border-blue-600
+              hover:-translate-y-0.5
+
+              transition-all
+              duration-300
+            "
+          >
+            <Github size={19} />
+          </a>
+
+          {/* Hire Me */}
+
+          <a
+            href="#contact"
+            className="
+              ml-1
+              inline-flex
+              items-center
+              justify-center
+              rounded-xl
+              bg-blue-600
+              px-5
+              py-2.5
+              text-sm
+              font-semibold
+              text-white
+
+              hover:bg-blue-700
+              hover:-translate-y-0.5
+              hover:shadow-[0_10px_30px_rgba(37,99,235,0.3)]
+
+              transition-all
+              duration-300
+            "
+          >
+            Hire Me
+          </a>
+        </div>
 
         {/* ===================================================== */}
         {/* MOBILE MENU BUTTON */}
@@ -130,22 +172,17 @@ export default function Navbar() {
           aria-expanded={menuOpen}
           className="
             lg:hidden
-
             w-10
             h-10
+            rounded-xl
+            border
+            border-white/10
+            bg-white/5
+            text-gray-300
 
             flex
             items-center
             justify-center
-
-            rounded-xl
-
-            border
-            border-white/10
-
-            bg-white/5
-
-            text-white
 
             hover:border-blue-500/50
             hover:bg-blue-500/10
@@ -155,11 +192,7 @@ export default function Navbar() {
             duration-300
           "
         >
-          {menuOpen ? (
-            <X size={22} />
-          ) : (
-            <Menu size={22} />
-          )}
+          {menuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
@@ -172,40 +205,34 @@ export default function Navbar() {
           <motion.div
             initial={{
               opacity: 0,
-              y: -15,
+              height: 0,
             }}
             animate={{
               opacity: 1,
-              y: 0,
+              height: "auto",
             }}
             exit={{
               opacity: 0,
-              y: -15,
+              height: 0,
             }}
             transition={{
               duration: 0.25,
             }}
             className="
               lg:hidden
-
+              overflow-hidden
               border-t
               border-white/10
-
               bg-black/95
               backdrop-blur-xl
-
-              shadow-2xl
             "
           >
             <nav
               className="
                 container-custom
-
                 flex
                 flex-col
-
-                py-6
-
+                py-5
                 gap-1
               "
             >
@@ -217,18 +244,13 @@ export default function Navbar() {
                   className="
                     px-4
                     py-3
-
                     rounded-xl
-
                     text-base
-                    sm:text-lg
-
                     font-medium
-
                     text-gray-300
 
-                    hover:text-blue-400
                     hover:bg-blue-500/10
+                    hover:text-blue-400
 
                     transition-all
                     duration-300
@@ -238,21 +260,50 @@ export default function Navbar() {
                 </a>
               ))}
 
-              {/* Mobile Hire Button */}
+              {/* Mobile GitHub */}
+
+              <a
+                href="https://github.com/Chethumalli"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMenuOpen(false)}
+                className="
+                  mt-2
+                  px-4
+                  py-3
+                  rounded-xl
+                  flex
+                  items-center
+                  gap-3
+                  text-gray-300
+
+                  hover:bg-blue-500/10
+                  hover:text-blue-400
+
+                  transition-all
+                "
+              >
+                <Github size={19} />
+                GitHub
+              </a>
+
+              {/* Mobile Hire Me */}
 
               <a
                 href="#contact"
                 onClick={() => setMenuOpen(false)}
                 className="
-                  btn-primary
-
-                  mt-4
-
+                  mt-3
                   w-full
-
-                  text-center
-
+                  rounded-xl
+                  bg-blue-600
                   py-3.5
+                  text-center
+                  font-semibold
+                  text-white
+
+                  hover:bg-blue-700
+                  transition-all
                 "
               >
                 Hire Me
