@@ -528,7 +528,7 @@ export default function Hero() {
                 "
               >
                 <Image
-                  src="/p.png"
+                  src="/p3.png"
                   alt="Chethan C Malli"
                   fill
                   priority
