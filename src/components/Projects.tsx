@@ -140,7 +140,7 @@ export default function Projects() {
         "Tailwind",
       ],
       website:
-        "https://artifexaiml.vercel.app/",
+        "https://artifex-ajiet.vercel.app/",
     },
 
     {
